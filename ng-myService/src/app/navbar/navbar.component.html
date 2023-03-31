@@ -1,0 +1,14 @@
+<nav class="grid-cols-4">
+  <button [ngClass]="{'shadow-inner shadow-slate-900': (!currPath|| currPath === 'charge')}" (click)="directTo('charge')" class="w-1/4 bg-slate-300  hover:bg-slate-400 active:bg-slate-300 p-3 border-r font-semibold ">
+      Charge                    
+  </button>
+  <button [ngClass]="{'shadow-inner shadow-slate-900': (currPath === 'earnings')}" (click)="directTo('earnings')" class="w-1/4 bg-slate-300 hover:bg-slate-400 active:bg-slate-300 p-3 border-r font-semibold ">
+      Earnings                
+  </button>
+  <button [ngClass]="{'shadow-inner shadow-slate-900': (currPath === 'services')}" (click)="directTo('services')" class="w-1/4 bg-slate-300 hover:bg-slate-400 active:bg-slate-300 p-3 border-r font-semibold  ">
+      Services
+  </button>
+  <button [ngClass]="{'shadow-inner shadow-slate-900': (currPath === 'account')}" (click)="directTo('account')" class="w-1/4 bg-slate-300 hover:bg-slate-400 active:bg-slate-300 p-3 border-r font-semibold  ">
+      Account
+  </button>
+</nav>

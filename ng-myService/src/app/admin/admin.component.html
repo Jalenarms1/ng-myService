@@ -1,0 +1,9 @@
+<div class="">
+    <app-navbar></app-navbar>
+    <div class="w-full h-full">
+        <app-charge-form *ngIf="route === 'charge' || !route"></app-charge-form>
+        <app-earnings-report *ngIf="route === 'earnings'"></app-earnings-report>
+        <app-service-list *ngIf="route === 'services'"></app-service-list>
+          
+    </div>    
+  </div>

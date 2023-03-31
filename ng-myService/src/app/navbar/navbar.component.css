@@ -1,0 +1,35 @@
+.nav-cst {
+    box-shadow: 0 0 10px rgb(48, 43, 43);
+}
+.navbar-nav .nav-link {
+    color: #ffffff;
+    background-color: #725b5b;
+    border-radius: 2px;
+    cursor: pointer;
+    
+}
+.navbar-brand {
+    font-family: 'Anton', sans-serif;
+    font-size: xx-large;
+    color: #ffffff;
+
+}
+.nav-item{
+    margin: 0;
+}
+.navbar-nav .nav-link:hover {
+    color: #c2b2b2;
+}
+
+.cst-contain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 2%;
+}
+
+.cst-options {
+    display: flex;
+    padding: 0 1%;
+}

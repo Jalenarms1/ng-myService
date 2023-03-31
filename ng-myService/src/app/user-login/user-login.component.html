@@ -1,0 +1,84 @@
+<div class="login">
+    <nav>
+        <p class="w-full bg-slate-300 text-2xl font-semibold flex justify-center items-center py-4">
+            Login / Sign Up
+        </p>
+    </nav>
+    <div class="overflow-auto ">
+        <form class="mt-8 space-y-6 w-[95%] mx-auto" action="#" method="POST">
+            <div class="text-2xl text-slate-200">
+                <p>Login</p>
+            </div>
+            <div class="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label for="usernameLogin" class=" text-slate-100">Username</label>
+                <input [(ngModel)]="usernameLogin" id="usernameLogin" name="usernameLogin" type="text" autocomplete="usernameLogin" required class="appearance-none my-3 rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" placeholder="Username">
+              </div>
+              <div>
+                <label for="passwordLogin" class=" text-slate-100">Password</label>
+                <input [(ngModel)]="passwordLogin" id="passwordLogin" name="passwordLogin" type="password" autocomplete="current-password" required class="appearance-none my-3 rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" placeholder="Password">
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              
+              <!-- <div class="text-sm">
+                <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                  Forgot your password?
+                </a>
+              </div> -->
+            </div>
+            <div>
+                <button (click)="submitLogin()" type="submit" class="group relative w-1/4 flex justify-center py-2 px-4  text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <svg class="h-5 w-5 text-blue-500  group-hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 6.707a1 1 0 010-1.414L8.586 2.29a1 1 0 011.414 0l3.293 3.293a1 1 0 01-1.414 1.414L10 5.414V14a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 011" />
+                        </svg>
+                    </span>
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+    <hr class="text-slate-200  mt-10" />
+    <div class="overflow-auto" id="sign-up">
+        <form class="mt-8 space-y-6 w-[95%] mx-auto" action="#" method="POST">
+            <div class="text-2xl text-slate-200">
+                <p>Sign Up</p>
+            </div>
+            <div class="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label for="usernameSignUp" class=" text-slate-100">Username</label>
+                <input [(ngModel)]="usernameSignUp" id="usernameSignUp" name="usernameSignUp" type="text" autocomplete="usernameSignUp" required class="appearance-none my-3 rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" placeholder="Username">
+              </div>
+              <div>
+                <label for="passwordSignUp" class=" text-slate-100">Password</label>
+                <input (input)="onChangeValidate($event)" [(ngModel)]="passwordSignUp" id="passwordSignUp" name="passwordSignUp" type="password" autocomplete="current-password" required class="appearance-none my-3 rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" placeholder="Password">
+              </div>
+              <div>
+
+                <label for="confirmPassword" class=" text-slate-100">Confirm Password</label>
+                <p *ngIf="passwordsDoNotMatch" class="text-red-500 text-sm">Passwords do not match. Please confirm your secure password.</p>
+                <input (input)="onChangeValidate($event)" [(ngModel)]="confirmPassword"  id="confirmPassword" name="confirmPassword" type="password" autocomplete="current-password" required class="appearance-none my-3 rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" placeholder="Confirm password">
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              
+              <!-- <div class="text-sm">
+                <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                  Forgot your password?
+                </a>
+              </div> -->
+            </div>
+            <div>
+                <button (click)="submitSignUp()" type="submit" class="group relative w-1/4 flex justify-center py-2 px-4  text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-600 ">
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <svg class="h-5 w-5 text-blue-500  group-hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 6.707a1 1 0 010-1.414L8.586 2.29a1 1 0 011.414 0l3.293 3.293a1 1 0 01-1.414 1.414L10 5.414V14a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 011" />
+                        </svg>
+                    </span>
+                    Sign Up
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
