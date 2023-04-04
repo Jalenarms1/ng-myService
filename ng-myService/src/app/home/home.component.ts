@@ -10,14 +10,12 @@ import { UserService } from '../user.service';
 })
 export class HomeComponent implements OnInit {
   user: User = {} as User;
-  constructor(private userService: UserService, public jwt: JwtServiceService) { }
+  constructor(public userService: UserService, public jwt: JwtServiceService) {
+    this.userService.getMe()
+   }
 
   ngOnInit(): void {
-    this.userService.getMe().subscribe(res => {
-      console.log(res);
-      
-      this.user = res
-    })
+    
   }
 
 }

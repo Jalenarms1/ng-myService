@@ -6,9 +6,9 @@ export interface CreateUserInput {
 
 export interface User {
     id: string,
-    name: string,
-    role: string,
-    memberOf: TeamMember[]
+    username: string,
+    earnings: Earning[],
+    services: Service[]
 }
 
 export interface AuthUserResponse {
@@ -16,22 +16,32 @@ export interface AuthUserResponse {
     token: string
 }
 
-export interface TeamMember {
+
+
+export interface Service {
     id: string,
-    teamId: string,
-    team: Team,
-    userId: string,
-    user: User
+    title: string,
+    description: string,
+    price: number,
+    customerName?: string,
+    customerEmail?: string,
+    isPaid?: boolean,
+    createdAt?: Date,
+    paidAt?: Date,
+    ownerId?: string,
+    owner?: User
+    
 }
 
-export interface Team {
-    $id: number,
+export interface Earning {
     id: string,
-    name: string,
-    members: TeamMember[]
+    amount: number,
+    ownerId: string,
+    owner?: User,
+    serviceId: string,
+    service?: Service,
+    createdAt: Date,
+    cashedOut: boolean,
+    payerName: string
 }
 
-export interface TeamResponse {
-    $id: number,
-    $values: Team[]
-}

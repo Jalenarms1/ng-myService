@@ -1,0 +1,93 @@
+<section class="bg-slate-700 pt-8 px-4 sm:px-6 lg:px-8 ">
+    <div class="max-w-7xl mx-auto">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <div class="mb-4 sm:mb-0">
+          <h1 class="text-3xl font-bold text-slate-200">Account Info</h1>
+          <p class="text-slate-300">Welcome back, <span class="font-semibold">Business Name</span> (<span class="font-semibold">Username</span>)</p>
+        </div>
+        <div class="sm:flex sm:items-center">
+          <!-- <button class="bg-indigo-500 text-white rounded-md py-2 px-4 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit Profile</button> -->
+          <button (click)="jwt.destroyToken()" class=" bg-gray-300 text-gray-700 rounded-md py-2 px-4 hover:bg-gray-400 focus:outline-none max-sm:mb-2 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Logout</button>
+        </div>
+      </div>
+      <div class="mt-8 bg-white shadow-md sm:rounded-md">
+        <!-- Additional content here -->
+      </div>
+    </div>
+</section>
+<!-- Recent Activity section -->
+<section class="pb-32  rounded-lg p-6">
+    <!-- <h2 class="text-xl font-medium mb-4 text-slate-300">Recent Activity</h2> -->
+  
+    <!-- Transaction list -->
+    <!-- <ul class="divide-y divide-gray-200">
+      <li class="py-4">
+        <div class="flex items-center space-x-4">
+          <div class="bg-gray-100 rounded-full p-2">
+            <svg class="h-6 w-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-gray-500 text-sm">Deposit</div>
+            <div class="font-medium">$1,000.00</div>
+            <div class="text-gray-400 text-sm">April 1, 2023</div>
+          </div>
+        </div>
+      </li>
+      <li class="py-4">
+        <div class="flex items-center space-x-4">
+          <div class="bg-gray-100 rounded-full p-2">
+            <svg class="h-6 w-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-gray-500 text-sm">Withdrawal</div>
+            <div class="font-medium">-$500.00</div>
+            <div class="text-gray-400 text-sm">March 31, 2023</div>
+          </div>
+        </div>
+      </li>
+    </ul> -->
+    <div class="py-8 w-[90%] mx-auto">
+        <h2 class="text-2xl text-slate-200 font-semibold mb-4">Top Services by Payment</h2>
+        <ul class="space-y-4">
+          <li *ngFor="let s of userService.topServices">
+            <div class="flex items-center justify-between">
+              <div class="flex-1 mr-4">
+                <h3 class="text-slate-300 font-semibold">{{s.title}}</h3>
+                <p class="text-slate-400">{{s.description}}</p>
+              </div>
+              <span class="text-slate-300 font-semibold">${{s.price.toFixed(2)}}</span>
+            </div>
+            <p class="text-slate-400 text-xs mt-2">Service date: {{s.createdAt | date: 'MM/dd/YYYY'}}</p>
+          </li>
+          <!-- <li>
+            <div class="flex items-center justify-between">
+              <div class="flex-1 mr-4">
+                <h3 class="text-slate-300 font-semibold">Service Title 2</h3>
+                <p class="text-slate-400">Service description lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <span class="text-slate-300 font-semibold">$75</span>
+            </div>
+            <p class="text-slate-400 text-xs mt-2">Service date: 02/08/2023</p>
+          </li>
+          <li>
+            <div class="flex items-center justify-between">
+              <div class="flex-1 mr-4">
+                <h3 class="text-slate-300 font-semibold">Service Title 3</h3>
+                <p class="text-slate-400">Service description lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <span class="text-slate-300 font-semibold">$50</span>
+            </div>
+            <p class="text-slate-400 text-xs mt-2">Service date: 02/05/2023</p>
+          </li> -->
+        </ul>
+    </div>
+      
+</section>
+  
+  

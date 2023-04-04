@@ -1,0 +1,30 @@
+<div class="flex items-end justify-center mt-16 ">
+    
+    <div class="w-[80%] max-sm:w-full max-sm:scroll-pb-48 max-sm:h-screen mx-auto h-[700px] sm:mb-10 pb-20 bg-slate-800 sm:rounded-md shadow-md shadow-slate-900 overflow-auto">
+        <div  class="w-[90%] lg:w-[50%] md:w-[70%] mx-auto py-8">
+            <p  class="text-4xl font-bold text-slate-200">{{service.customerName}}, your {{service.isPaid ? 'receipt' : 'bill'}} is ready!</p>
+            
+            <h1 class="text-2xl text-slate-200  my-4">{{service.title}}</h1>
+            <p class="text-slate-300 mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem quae dicta dolore voluptates sunt, autem quod modi doloribus veniam eveniet repudiandae dolor similique, corporis porro, perferendis illum consequuntur nulla unde.</p>
+            <div class="border rounded-md p-4 mb-4">
+                <div class="flex items-center justify-between">
+                    <p class="text-lg font-medium text-slate-200">Price:</p>
+                    <p *ngIf="service.price" class="text-lg text-slate-200">${{service.price.toFixed(2)}}</p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <p class="text-lg font-medium text-slate-200">Date Created:</p>
+                    <p class="text-lg text-slate-200">{{service.createdAt | date: 'MM/dd/YYYY'}}</p>
+                </div>
+                <div *ngIf="service.isPaid" class="flex items-center justify-between">
+                    <p class="text-lg font-medium text-slate-200">Date Paid:</p>
+                    <p class="text-lg text-slate-200">{{service.paidAt | date: 'MM/dd/YYYY'}}</p>
+                </div>
+            </div>
+            <div *ngIf="!service.isPaid" id="paypal-buttons-container"></div>
+            <div *ngIf="service.isPaid" class="border-2 p-3 rounded-md border-green-500">
+                <p class="text-green-500">Thank you for your payment! </p>
+            </div>
+        </div>
+      
+    </div>
+</div>

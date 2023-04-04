@@ -1,7 +1,6 @@
-<div class="flex items-center justify-center h-screen relative">
-    <img (click)="jwt.destroyToken()" src="assets/images/logout.png" alt="logout" class="absolute right-8 top-[-20px] cursor-pointer w-20">
-
-    <div class="w-[60%] mx-auto h-[600px] mb-10 pb-20 bg-slate-800 rounded-md shadow-md shadow-slate-900 overflow-auto">
+<div class="flex items-end justify-center mt-16">
+    
+    <div class="w-[90%] max-sm:w-full mx-auto sm:h-[700px] max-sm:h-full sm:mb-10 pb-20 bg-slate-800 sm:rounded-md shadow-md shadow-slate-900 overflow-auto">
       <app-admin *ngIf="jwt.isAuthenticated()"></app-admin>
       <app-user-login *ngIf="!jwt.isAuthenticated()"></app-user-login>
       

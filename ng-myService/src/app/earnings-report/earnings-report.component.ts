@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-earnings-report',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./earnings-report.component.css']
 })
 export class EarningsReportComponent implements OnInit {
-
-  constructor() { }
+  showModal: boolean = false;
+  
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
+    
+    
+    
+  }
+
+  toggleModal() {
+    this.showModal = !this.showModal
   }
 
 }
