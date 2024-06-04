@@ -10,7 +10,7 @@ const Catalog = () => {
                 <h2 className="text-3xl font-bold text-center mb-8">Shop Our Collection</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 {products.slice(0,4).map(product => (
-                    <div key={product.id} className="border p-4 rounded-lg shadow-md shadow-zinc-200 flex flex-col justify-between">
+                    <div key={product.id} className="border p-4 rounded-lg shadow-md shadow-zinc-200 hover:shadow-zinc-400 cursor-pointer flex flex-col justify-between">
                     <Image src={product.image} alt={product.name} width={75} height={75} className="w-full h-64 object-cover mb-4 rounded"/>
                     <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                     <p className="text-gray-600 mb-4">{product.price}</p>
